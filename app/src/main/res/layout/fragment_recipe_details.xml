@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screens.RecipeDetailsFragment">
+
+    <ScrollView
+        android:id="@+id/scrollViewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fixedLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        tools:ignore="NotSibling">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="261dp"
+                        android:background="@drawable/mealtest"
+                        android:scaleType="fitXY" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/fixedLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/title_det"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/favoriteButton"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/add_to_favorites"
+                        android:background="@drawable/ic_fav"
+                        android:minWidth="48dp"
+                        android:backgroundTint="@color/accent"
+                        android:minHeight="48dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:padding="12dp" />
+
+                    <ImageView
+                        android:id="@+id/img_youtube"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/yt_icon" />
+                </LinearLayout>
+
+                <!-- Move the long text view into ScrollView -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/descr"
+                        android:layout_width="match_parent"
+                        android:maxLines="2"
+                        android:layout_height="wrap_content"
+                        android:text="@string/long_text" />
+                </ScrollView>
+
+                <TextView
+                    android:id="@+id/toggleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_more"
+                    android:textColor="@android:color/holo_blue_dark" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
